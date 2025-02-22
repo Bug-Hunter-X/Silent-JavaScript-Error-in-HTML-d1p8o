@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // This script attempts to access a non-existent element, which should throw an error 
+    // but this error doesn't show up in browser's console.
+    document.getElementById('nonExistentElement').innerHTML = "This will cause an error";
+    // The error is swallowed by Javascript engine because of the way error handling is setup.
+    // Adding a try-catch block would show the error in the console. 
+  </script>
+</body>
+</html>
